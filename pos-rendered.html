@@ -1,0 +1,664 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="OPsWbVNRUf5IpVGJuEWVl2AYAudlGNp5kssDn5nL">
+
+        <title>Gadget Store POS</title>
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+
+        <!-- Scripts -->
+        <link rel="preload" as="style" href="http://127.0.0.1:8000/build/assets/app-C9LeJ9HP.css" /><link rel="modulepreload" as="script" href="http://127.0.0.1:8000/build/assets/app-CbDnpQwZ.js" /><link rel="modulepreload" as="script" href="http://127.0.0.1:8000/build/assets/_commonjsHelpers-CqkleIqs.js" /><link rel="stylesheet" href="http://127.0.0.1:8000/build/assets/app-C9LeJ9HP.css" /><script type="module" src="http://127.0.0.1:8000/build/assets/app-CbDnpQwZ.js"></script>    </head>
+    <body class="font-sans antialiased">
+        <div class="min-h-screen bg-gray-100">
+            <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+    <!-- Primary Navigation Menu -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+            <div class="flex">
+                <!-- Logo -->
+                <div class="shrink-0 flex items-center">
+                    <a href="http://127.0.0.1:8000/dashboard">
+                        <svg viewBox="0 0 316 316" xmlns="http://www.w3.org/2000/svg" class="block h-9 w-auto fill-current text-gray-800">
+    <path d="M305.8 81.125C305.77 80.995 305.69 80.885 305.65 80.755C305.56 80.525 305.49 80.285 305.37 80.075C305.29 79.935 305.17 79.815 305.07 79.685C304.94 79.515 304.83 79.325 304.68 79.175C304.55 79.045 304.39 78.955 304.25 78.845C304.09 78.715 303.95 78.575 303.77 78.475L251.32 48.275C249.97 47.495 248.31 47.495 246.96 48.275L194.51 78.475C194.33 78.575 194.19 78.725 194.03 78.845C193.89 78.955 193.73 79.045 193.6 79.175C193.45 79.325 193.34 79.515 193.21 79.685C193.11 79.815 192.99 79.935 192.91 80.075C192.79 80.285 192.71 80.525 192.63 80.755C192.58 80.875 192.51 80.995 192.48 81.125C192.38 81.495 192.33 81.875 192.33 82.265V139.625L148.62 164.795V52.575C148.62 52.185 148.57 51.805 148.47 51.435C148.44 51.305 148.36 51.195 148.32 51.065C148.23 50.835 148.16 50.595 148.04 50.385C147.96 50.245 147.84 50.125 147.74 49.995C147.61 49.825 147.5 49.635 147.35 49.485C147.22 49.355 147.06 49.265 146.92 49.155C146.76 49.025 146.62 48.885 146.44 48.785L93.99 18.585C92.64 17.805 90.98 17.805 89.63 18.585L37.18 48.785C37 48.885 36.86 49.035 36.7 49.155C36.56 49.265 36.4 49.355 36.27 49.485C36.12 49.635 36.01 49.825 35.88 49.995C35.78 50.125 35.66 50.245 35.58 50.385C35.46 50.595 35.38 50.835 35.3 51.065C35.25 51.185 35.18 51.305 35.15 51.435C35.05 51.805 35 52.185 35 52.575V232.235C35 233.795 35.84 235.245 37.19 236.025L142.1 296.425C142.33 296.555 142.58 296.635 142.82 296.725C142.93 296.765 143.04 296.835 143.16 296.865C143.53 296.965 143.9 297.015 144.28 297.015C144.66 297.015 145.03 296.965 145.4 296.865C145.5 296.835 145.59 296.775 145.69 296.745C145.95 296.655 146.21 296.565 146.45 296.435L251.36 236.035C252.72 235.255 253.55 233.815 253.55 232.245V174.885L303.81 145.945C305.17 145.165 306 143.725 306 142.155V82.265C305.95 81.875 305.89 81.495 305.8 81.125ZM144.2 227.205L100.57 202.515L146.39 176.135L196.66 147.195L240.33 172.335L208.29 190.625L144.2 227.205ZM244.75 114.995V164.795L226.39 154.225L201.03 139.625V89.825L219.39 100.395L244.75 114.995ZM249.12 57.105L292.81 82.265L249.12 107.425L205.43 82.265L249.12 57.105ZM114.49 184.425L96.13 194.995V85.305L121.49 70.705L139.85 60.135V169.815L114.49 184.425ZM91.76 27.425L135.45 52.585L91.76 77.745L48.07 52.585L91.76 27.425ZM43.67 60.135L62.03 70.705L87.39 85.305V202.545V202.555V202.565C87.39 202.735 87.44 202.895 87.46 203.055C87.49 203.265 87.49 203.485 87.55 203.695V203.705C87.6 203.875 87.69 204.035 87.76 204.195C87.84 204.375 87.89 204.575 87.99 204.745C87.99 204.745 87.99 204.755 88 204.755C88.09 204.905 88.22 205.035 88.33 205.175C88.45 205.335 88.55 205.495 88.69 205.635L88.7 205.645C88.82 205.765 88.98 205.855 89.12 205.965C89.28 206.085 89.42 206.225 89.59 206.325C89.6 206.325 89.6 206.325 89.61 206.335C89.62 206.335 89.62 206.345 89.63 206.345L139.87 234.775V285.065L43.67 229.705V60.135ZM244.75 229.705L148.58 285.075V234.775L219.8 194.115L244.75 179.875V229.705ZM297.2 139.625L253.49 164.795V114.995L278.85 100.395L297.21 89.825V139.625H297.2Z"/>
+</svg>
+                    </a>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="hidden space-x-6 sm:-my-px sm:ms-10 sm:flex overflow-x-auto">
+                    <a class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out" href="http://127.0.0.1:8000/dashboard">
+    Dashboard
+</a>
+
+                                            <a class="inline-flex items-center px-1 pt-1 border-b-2 border-indigo-400 text-sm font-medium leading-5 text-gray-900 focus:outline-none focus:border-indigo-700 transition duration-150 ease-in-out" href="http://127.0.0.1:8000/pos">
+    POS
+</a>
+                    
+                                            <a class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out" href="http://127.0.0.1:8000/sales">
+    Sales
+</a>
+                    
+                                            <a class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out" href="http://127.0.0.1:8000/inventory/products">
+    Inventory
+</a>
+                    
+                                            <a class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out" href="http://127.0.0.1:8000/customers">
+    Customers
+</a>
+                    
+                                            <a class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out" href="http://127.0.0.1:8000/suppliers">
+    Suppliers
+</a>
+                    
+                                            <a class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out" href="http://127.0.0.1:8000/purchase-orders">
+    Purchases
+</a>
+                    
+                                            <a class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out" href="http://127.0.0.1:8000/warranties">
+    Warranty
+</a>
+                    
+                                            <a class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out" href="http://127.0.0.1:8000/repair-tickets">
+    Repairs
+</a>
+                    
+                                            <a class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out" href="http://127.0.0.1:8000/reports/sales">
+    Reports
+</a>
+                    
+                                            <a class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out" href="http://127.0.0.1:8000/users">
+    Users
+</a>
+                    
+                                            <a class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out" href="http://127.0.0.1:8000/discount-rules">
+    Discounts
+</a>
+                    
+                                            <a class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out" href="http://127.0.0.1:8000/settings">
+    Settings
+</a>
+                                    </div>
+            </div>
+
+            <!-- Settings Dropdown -->
+            <div class="hidden sm:flex sm:items-center sm:ms-6">
+                <div class="relative" x-data="{ open: false }" @click.outside="open = false" @close.stop="open = false">
+    <div @click="open = ! open">
+        <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
+                            <div>Store Admin</div>
+
+                            <div class="ms-1">
+                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </button>
+    </div>
+
+    <div x-show="open"
+            x-transition:enter="transition ease-out duration-200"
+            x-transition:enter-start="opacity-0 scale-95"
+            x-transition:enter-end="opacity-100 scale-100"
+            x-transition:leave="transition ease-in duration-75"
+            x-transition:leave-start="opacity-100 scale-100"
+            x-transition:leave-end="opacity-0 scale-95"
+            class="absolute z-50 mt-2 w-48 rounded-md shadow-lg ltr:origin-top-right rtl:origin-top-left end-0"
+            style="display: none;"
+            @click="open = false">
+        <div class="rounded-md ring-1 ring-black ring-opacity-5 py-1 bg-white">
+            <a class="block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out" href="http://127.0.0.1:8000/profile">Profile</a>
+
+                        <!-- Authentication -->
+                        <form method="POST" action="http://127.0.0.1:8000/logout">
+                            <input type="hidden" name="_token" value="OPsWbVNRUf5IpVGJuEWVl2AYAudlGNp5kssDn5nL" autocomplete="off">
+                            <a class="block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out" href="http://127.0.0.1:8000/logout" onclick="event.preventDefault();
+                                                if (window.caches) { caches.delete('pos-page'); }
+                                                this.closest('form').submit();">Log Out</a>
+                        </form>
+        </div>
+    </div>
+</div>
+            </div>
+
+            <!-- Hamburger -->
+            <div class="-me-2 flex items-center sm:hidden">
+                <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
+                    <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                        <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Responsive Navigation Menu -->
+    <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
+        <div class="pt-2 pb-3 space-y-1">
+            <a class="block w-full ps-3 pe-4 py-2 border-l-4 border-transparent text-start text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out" href="http://127.0.0.1:8000/dashboard">
+    Dashboard
+</a>
+
+                            <a class="block w-full ps-3 pe-4 py-2 border-l-4 border-indigo-400 text-start text-base font-medium text-indigo-700 bg-indigo-50 focus:outline-none focus:text-indigo-800 focus:bg-indigo-100 focus:border-indigo-700 transition duration-150 ease-in-out" href="http://127.0.0.1:8000/pos">
+    POS
+</a>
+                                        <a class="block w-full ps-3 pe-4 py-2 border-l-4 border-transparent text-start text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out" href="http://127.0.0.1:8000/sales">
+    Sales
+</a>
+                                        <a class="block w-full ps-3 pe-4 py-2 border-l-4 border-transparent text-start text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out" href="http://127.0.0.1:8000/inventory/products">
+    Inventory
+</a>
+                                        <a class="block w-full ps-3 pe-4 py-2 border-l-4 border-transparent text-start text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out" href="http://127.0.0.1:8000/customers">
+    Customers
+</a>
+                                        <a class="block w-full ps-3 pe-4 py-2 border-l-4 border-transparent text-start text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out" href="http://127.0.0.1:8000/suppliers">
+    Suppliers
+</a>
+                                        <a class="block w-full ps-3 pe-4 py-2 border-l-4 border-transparent text-start text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out" href="http://127.0.0.1:8000/purchase-orders">
+    Purchases
+</a>
+                                        <a class="block w-full ps-3 pe-4 py-2 border-l-4 border-transparent text-start text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out" href="http://127.0.0.1:8000/warranties">
+    Warranty
+</a>
+                                        <a class="block w-full ps-3 pe-4 py-2 border-l-4 border-transparent text-start text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out" href="http://127.0.0.1:8000/repair-tickets">
+    Repairs
+</a>
+                                        <a class="block w-full ps-3 pe-4 py-2 border-l-4 border-transparent text-start text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out" href="http://127.0.0.1:8000/reports/sales">
+    Reports
+</a>
+                                        <a class="block w-full ps-3 pe-4 py-2 border-l-4 border-transparent text-start text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out" href="http://127.0.0.1:8000/users">
+    Users
+</a>
+                                        <a class="block w-full ps-3 pe-4 py-2 border-l-4 border-transparent text-start text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out" href="http://127.0.0.1:8000/discount-rules">
+    Discounts
+</a>
+                                        <a class="block w-full ps-3 pe-4 py-2 border-l-4 border-transparent text-start text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out" href="http://127.0.0.1:8000/settings">
+    Settings
+</a>
+                    </div>
+
+        <!-- Responsive Settings Options -->
+        <div class="pt-4 pb-1 border-t border-gray-200">
+            <div class="px-4">
+                <div class="font-medium text-base text-gray-800">Store Admin</div>
+                <div class="font-medium text-sm text-gray-500">admin@gadgetstore.test</div>
+            </div>
+
+            <div class="mt-3 space-y-1">
+                <a class="block w-full ps-3 pe-4 py-2 border-l-4 border-transparent text-start text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out" href="http://127.0.0.1:8000/profile">
+    Profile
+</a>
+
+                <!-- Authentication -->
+                <form method="POST" action="http://127.0.0.1:8000/logout">
+                    <input type="hidden" name="_token" value="OPsWbVNRUf5IpVGJuEWVl2AYAudlGNp5kssDn5nL" autocomplete="off">
+                    <a class="block w-full ps-3 pe-4 py-2 border-l-4 border-transparent text-start text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out" href="http://127.0.0.1:8000/logout" onclick="event.preventDefault();
+                                        if (window.caches) { caches.delete('pos-page'); }
+                                        this.closest('form').submit();">
+    Log Out
+</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</nav>
+
+            <!-- Page Heading -->
+                            <header class="bg-white shadow">
+                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                        <div class="flex justify-between items-center">
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">Point of Sale</h2>
+            <div class="flex items-center gap-4">
+                <a href="http://127.0.0.1:8000/pos/held" class="text-sm text-indigo-600 hover:underline">Held Orders (0)</a>
+            </div>
+        </div>
+                    </div>
+                </header>
+            
+            <!-- Page Content -->
+            <main>
+                <script>
+        function posCart(products, customers, resumeData, discountRules, bankDetails, syncUrl) {
+            return {
+                products, customers, discountRules, bankDetails, syncUrl,
+                search: '', error: '', appliedRuleId: '',
+                isOffline: !navigator.onLine, queuedCount: 0, offlineReceipt: null, qrDataUrl: null,
+                resumeSaleId: resumeData ? resumeData.id : null,
+                customerId: resumeData ? (resumeData.customer_id ?? '') : '',
+                discountAmount: resumeData ? resumeData.discount_amount : 0,
+                payments: [{ method: 'cash', amount: 0, reference_no: '' }],
+                cart: resumeData ? resumeData.items.map(i => {
+                    const product = products.find(p => p.id === i.product_id);
+                    if (!product) return null;
+                    return product.track_serial ? {
+                        product_id: i.product_id, name: product.name, unit_price: i.unit_price,
+                        quantity: 1, discount_amount: i.discount_amount, track_serial: true,
+                        serials: product.serials, product_serial_id: i.product_serial_id,
+                        tax_rate: product.tax_rate, category_id: product.category_id,
+                    } : {
+                        product_id: i.product_id, name: product.name, unit_price: i.unit_price,
+                        quantity: i.quantity, discount_amount: i.discount_amount, track_serial: false,
+                        max_quantity: product.quantity,
+                        tax_rate: product.tax_rate, category_id: product.category_id,
+                    };
+                }).filter(Boolean) : [],
+
+                async init() {
+                    this.refreshQueuedCount();
+                    this.trySyncQueue();
+                    window.addEventListener('online', () => { this.isOffline = false; this.trySyncQueue(); });
+                    window.addEventListener('offline', () => { this.isOffline = true; });
+                    setInterval(() => this.trySyncQueue(), 20000);
+                },
+
+                async refreshQueuedCount() {
+                    const queued = await window.PosOfflineQueue.getQueuedSales();
+                    this.queuedCount = queued.length;
+                },
+
+                async trySyncQueue() {
+                    if (!navigator.onLine) return;
+                    const queued = await window.PosOfflineQueue.getQueuedSales();
+                    for (const queuedSale of queued) {
+                        try {
+                            const res = await fetch(this.syncUrl, {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                    'Accept': 'application/json',
+                                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
+                                },
+                                body: JSON.stringify(queuedSale),
+                            });
+                            if (res.ok) {
+                                await window.PosOfflineQueue.removeQueuedSale(queuedSale.client_uuid);
+                            }
+                        } catch (e) {
+                            break;
+                        }
+                    }
+                    this.refreshQueuedCount();
+                },
+
+                get filteredProducts() {
+                    if (!this.search) return this.products.slice(0, 24);
+                    const term = this.search.toLowerCase();
+                    return this.products.filter(p =>
+                        p.name.toLowerCase().includes(term) ||
+                        p.sku.toLowerCase().includes(term) ||
+                        (p.barcode && p.barcode.toLowerCase().includes(term))
+                    ).slice(0, 24);
+                },
+
+                get usedSerialIds() {
+                    return this.cart.filter(i => i.track_serial).map(i => i.product_serial_id);
+                },
+
+                addProduct(product) {
+                    this.error = '';
+                    if (product.track_serial) {
+                        const available = product.serials.find(s => !this.usedSerialIds.includes(s.id));
+                        if (!available) {
+                            this.error = `No available serial/IMEI for ${product.name}.`;
+                            return;
+                        }
+                        this.cart.push({
+                            product_id: product.id, name: product.name, unit_price: product.selling_price,
+                            quantity: 1, discount_amount: 0, track_serial: true,
+                            serials: product.serials, product_serial_id: available.id,
+                            tax_rate: product.tax_rate, category_id: product.category_id,
+                        });
+                    } else {
+                        const existing = this.cart.find(i => i.product_id === product.id && !i.track_serial);
+                        if (existing) {
+                            if (existing.quantity < product.quantity) {
+                                existing.quantity++;
+                            } else {
+                                this.error = `Not enough stock for ${product.name}.`;
+                            }
+                        } else {
+                            if (product.quantity < 1) {
+                                this.error = `${product.name} is out of stock.`;
+                                return;
+                            }
+                            this.cart.push({
+                                product_id: product.id, name: product.name, unit_price: product.selling_price,
+                                quantity: 1, discount_amount: 0, track_serial: false, max_quantity: product.quantity,
+                                tax_rate: product.tax_rate, category_id: product.category_id,
+                            });
+                        }
+                    }
+                },
+
+                applyDiscountRule(ruleId) {
+                    const rule = this.discountRules.find(r => r.id == ruleId);
+                    this.appliedRuleId = ruleId;
+                    if (!rule) return;
+
+                    const round2 = (n) => Math.round(n * 100) / 100;
+
+                    if (rule.scope === 'all') {
+                        this.discountAmount = rule.type === 'percentage'
+                            ? round2(this.subtotal * rule.value / 100)
+                            : rule.value;
+                        return;
+                    }
+
+                    this.cart.forEach(item => {
+                        const matches = rule.scope === 'category'
+                            ? item.category_id === rule.scope_id
+                            : item.product_id === rule.scope_id;
+
+                        if (matches && item.quantity >= rule.min_quantity) {
+                            const base = item.unit_price * item.quantity;
+                            item.discount_amount = rule.type === 'percentage' ? round2(base * rule.value / 100) : rule.value;
+                        }
+                    });
+                },
+
+                removeItem(index) { this.cart.splice(index, 1); },
+
+                lineSubtotal(item) { return (item.unit_price * item.quantity) - (Number(item.discount_amount) || 0); },
+
+                get subtotal() { return this.cart.reduce((sum, item) => sum + this.lineSubtotal(item), 0); },
+
+                get taxAmount() {
+                    return this.cart.reduce((sum, item) => sum + (this.lineSubtotal(item) * (Number(item.tax_rate) || 0) / 100), 0);
+                },
+
+                get total() { return Math.max(0, this.subtotal - Number(this.discountAmount || 0) + Number(this.taxAmount || 0)); },
+
+                get totalPaid() { return this.payments.reduce((sum, p) => sum + Number(p.amount || 0), 0); },
+
+                get changeDue() { return Math.max(0, this.totalPaid - this.total); },
+
+                addPayment() { this.payments.push({ method: 'cash', amount: 0, reference_no: '' }); },
+
+                removePayment(index) { if (this.payments.length > 1) this.payments.splice(index, 1); },
+
+                money(amount) { return Number(amount || 0).toFixed(2); },
+
+                async showTransferQr(payment) {
+                    const amount = Number(payment.amount || this.total).toFixed(2);
+                    const text = `Pay NGN ${amount} to ${this.bankDetails.account_name}\n${this.bankDetails.bank_name}\nAcct No: ${this.bankDetails.account_number}`;
+                    this.qrDataUrl = await window.QRCode.toDataURL(text, { width: 200, margin: 1 });
+                },
+
+                generateUuid() {
+                    if (window.crypto && crypto.randomUUID) return crypto.randomUUID();
+                    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
+                        const r = Math.random() * 16 | 0;
+                        return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+                    });
+                },
+
+                resetCart() {
+                    this.cart = [];
+                    this.discountAmount = 0;
+                    this.customerId = '';
+                    this.appliedRuleId = '';
+                    this.payments = [{ method: 'cash', amount: 0, reference_no: '' }];
+                    this.resumeSaleId = null;
+                },
+
+                async completeSale() {
+                    this.error = '';
+                    if (this.cart.length === 0) { this.error = 'Cart is empty.'; return; }
+                    if (this.totalPaid < this.total) { this.error = 'Amount paid is less than the total due.'; return; }
+
+                    const clientUuid = this.generateUuid();
+                    const payload = {
+                        client_uuid: clientUuid,
+                        client_sold_at: new Date().toISOString(),
+                        was_queued: false,
+                        resume_sale_id: this.resumeSaleId,
+                        customer_id: this.customerId || null,
+                        discount_amount: this.discountAmount,
+                        tax_amount: this.taxAmount,
+                        items_json: JSON.stringify(this.cart.map(i => ({
+                            product_id: i.product_id,
+                            product_serial_id: i.product_serial_id || null,
+                            quantity: i.quantity,
+                            discount_amount: i.discount_amount || 0,
+                        }))),
+                        payments_json: JSON.stringify(this.payments),
+                    };
+
+                    try {
+                        const res = await fetch(this.syncUrl, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Accept': 'application/json',
+                                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
+                            },
+                            body: JSON.stringify(payload),
+                        });
+
+                        if (!res.ok) {
+                            const data = await res.json().catch(() => ({}));
+                            this.error = data.message || 'Could not complete the sale.';
+                            return;
+                        }
+
+                        const data = await res.json();
+                        window.location.href = data.receipt_url;
+                    } catch (e) {
+                        payload.was_queued = true;
+                        await window.PosOfflineQueue.queueSale(payload);
+                        await this.refreshQueuedCount();
+                        this.offlineReceipt = {
+                            reference: 'OFFLINE-' + clientUuid.slice(0, 8).toUpperCase(),
+                            items: this.cart.map(i => ({ name: i.name, quantity: i.quantity, subtotal: this.lineSubtotal(i) })),
+                            total: this.total, paid: this.totalPaid, change: this.changeDue,
+                        };
+                        this.resetCart();
+                    }
+                },
+
+                submitHold() {
+                    this.error = '';
+                    if (this.cart.length === 0) { this.error = 'Cart is empty.'; return false; }
+
+                    document.getElementById('items_json').value = JSON.stringify(this.cart.map(i => ({
+                        product_id: i.product_id,
+                        product_serial_id: i.product_serial_id || null,
+                        quantity: i.quantity,
+                        discount_amount: i.discount_amount || 0,
+                    })));
+                    return true;
+                },
+            };
+        }
+    </script>
+
+    <div class="py-6">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            
+            <div x-data="posCart([{"id":1,"name":"iPhone 13","sku":"PHN-IP13","barcode":null,"selling_price":200000,"quantity":7,"track_serial":true,"category_id":1,"tax_rate":7.5,"serials":[{"id":4,"imei_serial":"IMEI-TEST-000004"},{"id":5,"imei_serial":"IMEI-TEST-000005"},{"id":6,"imei_serial":"IMEI-TEST-000006"},{"id":7,"imei_serial":"IMEI-TEST-000007"},{"id":8,"imei_serial":"IMEI-TEST-000008"},{"id":9,"imei_serial":"IMEI-TEST-000009"},{"id":10,"imei_serial":"IMEI-TEST-000010"}]}], [{"id":2,"name":"Blessing Adeyemi","phone":"08145678901"},{"id":3,"name":"Musa Ibrahim","phone":"08167890123"},{"id":1,"name":"Walk-in Customer","phone":"00000000000"}], null, [{"id":1,"name":"10% Off Everything","type":"percentage","value":10,"scope":"all","scope_id":null,"min_quantity":1}], {"account_name":"Gadget Store Ltd","bank_name":"GTBank","account_number":"0123456789"}, 'http://127.0.0.1:8000/pos/sync')" class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+                <div x-show="isOffline" class="lg:col-span-3 bg-yellow-100 text-yellow-800 text-sm px-4 py-2 rounded-md">
+                    You're offline. Sales will keep working and sync automatically once the connection returns.
+                    <span x-show="queuedCount > 0" x-text="'(' + queuedCount + ' waiting to sync)'"></span>
+                </div>
+                <div x-show="!isOffline && queuedCount > 0" class="lg:col-span-3 bg-blue-50 text-blue-700 text-sm px-4 py-2 rounded-md">
+                    Syncing <span x-text="queuedCount"></span> offline sale(s)...
+                </div>
+
+                <!-- Product picker -->
+                <div class="lg:col-span-2 bg-white shadow-sm rounded-lg p-4">
+                    <input type="text" x-model="search" placeholder="Search by name, SKU or barcode..."
+                           class="w-full border-gray-300 rounded-md shadow-sm mb-4">
+
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 max-h-[32rem] overflow-y-auto">
+                        <template x-for="product in filteredProducts" :key="product.id">
+                            <button type="button" @click="addProduct(product)"
+                                    class="text-left border rounded-lg p-3 hover:border-indigo-400 hover:bg-indigo-50">
+                                <div class="font-medium text-gray-900 text-sm" x-text="product.name"></div>
+                                <div class="text-xs text-gray-500" x-text="product.sku"></div>
+                                <div class="text-sm text-gray-700 mt-1" x-text="'₦' + money(product.selling_price)"></div>
+                                <div class="text-xs" :class="product.quantity <= 0 ? 'text-red-500' : 'text-gray-400'" x-text="'Qty: ' + product.quantity"></div>
+                            </button>
+                        </template>
+                    </div>
+                </div>
+
+                <!-- Cart -->
+                <div class="bg-white shadow-sm rounded-lg p-4 flex flex-col">
+                    <template x-if="error">
+                        <div class="bg-red-50 border border-red-200 text-red-800 text-xs rounded-md px-3 py-2 mb-3" x-text="error"></div>
+                    </template>
+
+                    <div class="mb-3">
+                        <label class="text-xs text-gray-500">Customer (optional)</label>
+                        <select x-model="customerId" class="w-full border-gray-300 rounded-md shadow-sm text-sm mt-1">
+                            <option value="">Walk-in Customer</option>
+                            <template x-for="c in customers" :key="c.id">
+                                <option :value="c.id" x-text="c.name + (c.phone ? ' (' + c.phone + ')' : '')"></option>
+                            </template>
+                        </select>
+                    </div>
+
+                    <div class="flex-1 overflow-y-auto space-y-2 max-h-64">
+                        <template x-for="(item, index) in cart" :key="index">
+                            <div class="border rounded-md p-2 text-sm">
+                                <div class="flex justify-between items-start">
+                                    <div class="font-medium" x-text="item.name"></div>
+                                    <button type="button" @click="removeItem(index)" class="text-red-500 text-xs">Remove</button>
+                                </div>
+                                <template x-if="item.track_serial">
+                                    <select x-model.number="item.product_serial_id" class="w-full text-xs border-gray-300 rounded mt-1">
+                                        <template x-for="s in item.serials" :key="s.id">
+                                            <option :value="s.id" x-text="s.imei_serial"></option>
+                                        </template>
+                                    </select>
+                                </template>
+                                <div class="flex items-center gap-2 mt-1">
+                                    <template x-if="!item.track_serial">
+                                        <input type="number" min="1" :max="item.max_quantity" x-model.number="item.quantity" class="w-16 text-xs border-gray-300 rounded">
+                                    </template>
+                                    <template x-if="item.track_serial">
+                                        <span class="text-xs text-gray-500">Qty: 1</span>
+                                    </template>
+                                    <span class="text-xs text-gray-400">&times; ₦<span x-text="money(item.unit_price)"></span></span>
+                                    <input type="number" min="0" x-model.number="item.discount_amount" placeholder="discount" class="w-20 text-xs border-gray-300 rounded ml-auto">
+                                </div>
+                                <div class="text-right text-xs font-semibold mt-1">₦<span x-text="money(lineSubtotal(item))"></span></div>
+                            </div>
+                        </template>
+                        <p x-show="cart.length === 0" class="text-sm text-gray-400 text-center py-4">Cart is empty</p>
+                    </div>
+
+                    <div class="border-t mt-3 pt-3 space-y-2 text-sm">
+                        <div class="flex justify-between"><span>Subtotal</span><span>₦<span x-text="money(subtotal)"></span></span></div>
+
+                        <template x-if="discountRules.length > 0">
+                            <select :value="appliedRuleId" @change="applyDiscountRule($event.target.value)" class="w-full text-xs border-gray-300 rounded">
+                                <option value="">Apply a discount rule...</option>
+                                <template x-for="rule in discountRules" :key="rule.id">
+                                    <option :value="rule.id" x-text="rule.name + ' (' + (rule.type === 'percentage' ? rule.value + '%' : '₦' + rule.value) + ')'"></option>
+                                </template>
+                            </select>
+                        </template>
+
+                        <div class="flex justify-between items-center">
+                            <span>Discount</span>
+                            <input type="number" min="0" x-model.number="discountAmount" class="w-24 text-xs border-gray-300 rounded text-right">
+                        </div>
+                        <div class="flex justify-between items-center text-gray-500">
+                            <span>Tax (auto)</span>
+                            <span>₦<span x-text="money(taxAmount)"></span></span>
+                        </div>
+                        <div class="flex justify-between font-semibold text-base border-t pt-2"><span>Total</span><span>₦<span x-text="money(total)"></span></span></div>
+                    </div>
+
+                    <div class="border-t mt-3 pt-3 space-y-2">
+                        <div class="text-xs text-gray-500 font-medium">Payments</div>
+                        <template x-for="(payment, index) in payments" :key="index">
+                            <div class="flex items-center gap-1">
+                                <select x-model="payment.method" class="text-xs border-gray-300 rounded w-24">
+                                    <option value="cash">Cash</option>
+                                    <option value="card">Card</option>
+                                    <option value="transfer">Transfer</option>
+                                </select>
+                                <input type="number" min="0" step="0.01" x-model.number="payment.amount" placeholder="amount" class="text-xs border-gray-300 rounded w-24">
+                                <input type="text" x-model="payment.reference_no" placeholder="ref#" class="text-xs border-gray-300 rounded flex-1">
+                                <button type="button" x-show="payment.method === 'transfer'" @click="showTransferQr(payment)" class="text-indigo-600 text-xs">QR</button>
+                                <button type="button" @click="removePayment(index)" class="text-red-400 text-xs">&times;</button>
+                            </div>
+                        </template>
+                        <button type="button" @click="addPayment()" class="text-xs text-indigo-600 hover:underline">+ Add payment method</button>
+
+                        <div class="flex justify-between text-sm pt-2">
+                            <span>Paid</span><span>₦<span x-text="money(totalPaid)"></span></span>
+                        </div>
+                        <div class="flex justify-between text-sm font-semibold text-green-700">
+                            <span>Change</span><span>₦<span x-text="money(changeDue)"></span></span>
+                        </div>
+                    </div>
+
+                    <form method="POST" action="http://127.0.0.1:8000/pos/hold" @submit="if (!submitHold()) $event.preventDefault()" class="mt-3 space-y-2">
+                        <input type="hidden" name="_token" value="OPsWbVNRUf5IpVGJuEWVl2AYAudlGNp5kssDn5nL" autocomplete="off">                        <input type="hidden" name="resume_sale_id" :value="resumeSaleId">
+                        <input type="hidden" name="customer_id" :value="customerId">
+                        <input type="hidden" name="discount_amount" :value="discountAmount">
+                        <input type="hidden" name="tax_amount" :value="taxAmount">
+                        <input type="hidden" name="items_json" id="items_json">
+                        <button type="submit" :disabled="isOffline" :class="isOffline ? 'opacity-50 cursor-not-allowed' : ''"
+                                class="w-full bg-gray-100 text-gray-700 rounded-md py-2 font-medium hover:bg-gray-200">
+                            Hold Order
+                        </button>
+                    </form>
+
+                    <button type="button" @click="completeSale()"
+                            class="w-full bg-green-600 text-white rounded-md py-2 font-medium hover:bg-green-700 mt-2">
+                        Complete Sale
+                    </button>
+                </div>
+
+                <!-- QR modal -->
+                <template x-if="qrDataUrl">
+                    <div class="fixed inset-0 bg-black/50 flex items-center justify-center z-50" @click.self="qrDataUrl = null">
+                        <div class="bg-white rounded-lg p-6 max-w-xs w-full text-center">
+                            <div class="font-semibold text-gray-900 mb-3">Scan to Pay by Transfer</div>
+                            <img :src="qrDataUrl" alt="Transfer QR code" class="mx-auto">
+                            <div class="text-xs text-gray-500 mt-3" x-text="bankDetails.account_name + ' — ' + bankDetails.bank_name"></div>
+                            <div class="text-xs text-gray-500" x-text="'Acct: ' + bankDetails.account_number"></div>
+                            <button type="button" @click="qrDataUrl = null" class="mt-4 w-full bg-gray-800 text-white rounded-md py-2 text-sm">Close</button>
+                        </div>
+                    </div>
+                </template>
+
+                <!-- Offline sale confirmation -->
+                <template x-if="offlineReceipt">
+                    <div class="fixed inset-0 bg-black/50 flex items-center justify-center z-50" @click.self="offlineReceipt = null">
+                        <div class="bg-white rounded-lg p-6 max-w-sm w-full">
+                            <div class="text-center mb-4">
+                                <div class="text-lg font-semibold text-yellow-700">Saved Offline</div>
+                                <div class="text-xs text-gray-500 mt-1">No internet connection — this sale will sync automatically once you're back online.</div>
+                            </div>
+                            <div class="text-sm space-y-1 mb-4">
+                                <div class="text-xs text-gray-400">Reference: <span x-text="offlineReceipt.reference"></span></div>
+                                <template x-for="item in offlineReceipt.items" :key="item.name">
+                                    <div class="flex justify-between"><span x-text="item.quantity + '× ' + item.name"></span><span x-text="'₦' + money(item.subtotal)"></span></div>
+                                </template>
+                                <div class="flex justify-between font-semibold border-t pt-1"><span>Total</span><span x-text="'₦' + money(offlineReceipt.total)"></span></div>
+                                <div class="flex justify-between"><span>Paid</span><span x-text="'₦' + money(offlineReceipt.paid)"></span></div>
+                                <div class="flex justify-between text-green-700"><span>Change</span><span x-text="'₦' + money(offlineReceipt.change)"></span></div>
+                            </div>
+                            <button type="button" @click="offlineReceipt = null" class="w-full bg-gray-800 text-white rounded-md py-2 text-sm">Start Next Sale</button>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+            </main>
+        </div>
+    </body>
+</html>
+

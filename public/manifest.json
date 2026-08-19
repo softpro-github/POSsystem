@@ -1,0 +1,18 @@
+{
+    "name": "Softpro POS",
+    "short_name": "Softpro POS",
+    "description": "Point of sale, inventory, and business management",
+    "start_url": "/dashboard",
+    "scope": "/",
+    "display": "standalone",
+    "background_color": "#09090b",
+    "theme_color": "#09090b",
+    "icons": [
+        {
+            "src": "/favicon.png",
+            "sizes": "256x256",
+            "type": "image/png",
+            "purpose": "any"
+        }
+    ]
+}
