@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <div class="flex justify-between items-center">
+        <div class="flex flex-wrap items-center justify-between gap-y-2">
             <h2 class="font-semibold text-xl text-ink leading-tight">Customers</h2>
             @can('manage customers')
                 <a href="{{ route('customers.create') }}" class="inline-flex items-center px-4 py-2 bg-accent-500 text-zinc-950 rounded-md text-sm hover:bg-accent-400">Add Customer</a>

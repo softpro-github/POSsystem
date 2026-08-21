@@ -1,8 +1,8 @@
 <x-app-layout>
     <x-slot name="header">
-        <div class="flex justify-between items-center">
+        <div class="flex flex-wrap items-center justify-between gap-y-2">
             <h2 class="font-semibold text-xl text-ink leading-tight">Repair Ticket {{ $repairTicket->ticket_number }}</h2>
-            <div class="flex gap-3">
+            <div class="flex flex-wrap gap-3">
                 <a href="{{ route('repair-tickets.edit', $repairTicket) }}" class="text-sm text-accent-400 hover:text-accent-300 hover:underline self-center">Edit</a>
                 <form action="{{ route('repair-tickets.destroy', $repairTicket) }}" method="POST" onsubmit="return confirm('Delete this ticket?');">
                     @csrf

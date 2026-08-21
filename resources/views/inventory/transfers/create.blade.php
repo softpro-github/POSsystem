@@ -66,7 +66,7 @@
                                 <select x-model="item.product_id" class="flex-1 text-sm bg-surface-hover border-border-strong text-ink rounded-md">
                                     <option value="">Select product</option>
                                     <template x-for="p in products" :key="p.id">
-                                        <option :value="p.id" x-text="p.name + ' (' + p.sku + ')'"></option>
+                                        <option :value="p.id" x-text="p.sku ? p.name + ' (' + p.sku + ')' : p.name"></option>
                                     </template>
                                 </select>
                                 <input type="number" min="1" x-model.number="item.quantity" placeholder="Qty" class="w-24 text-sm bg-surface-hover border-border-strong text-ink rounded-md">

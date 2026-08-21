@@ -1,8 +1,8 @@
 <x-app-layout>
     <x-slot name="header">
-        <div class="flex justify-between items-center">
+        <div class="flex flex-wrap items-center justify-between gap-y-2">
             <h2 class="font-semibold text-xl text-ink leading-tight">Sale {{ $sale->invoice_number }}</h2>
-            <div class="flex gap-3">
+            <div class="flex flex-wrap gap-3">
                 <a href="{{ route('sales.receipt', $sale) }}" target="_blank" class="text-sm text-accent-400 hover:text-accent-300 hover:underline self-center">Print Receipt</a>
                 @can('void sales')
                     @if ($sale->status === 'completed')

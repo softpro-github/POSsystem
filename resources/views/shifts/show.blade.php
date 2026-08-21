@@ -1,10 +1,10 @@
 <x-app-layout>
     <x-slot name="header">
-        <div class="flex justify-between items-center">
+        <div class="flex flex-wrap items-center justify-between gap-y-2">
             <h2 class="font-semibold text-xl text-ink leading-tight">
                 Shift #{{ $shift->id }} — {{ $shift->user->name }}
             </h2>
-            <div class="flex items-center gap-4">
+            <div class="flex flex-wrap items-center gap-4">
                 @if ($shift->status === 'closed')
                     <button type="button" onclick="window.print()" class="text-sm text-accent-400 hover:underline">Print Z-Report</button>
                 @endif

@@ -19,8 +19,8 @@
     </div>
 
     <div>
-        <x-input-label for="sku" value="SKU" />
-        <x-text-input id="sku" name="sku" type="text" class="mt-1 block w-full" value="{{ old('sku', $p->sku) }}" required />
+        <x-input-label for="sku" value="SKU (optional)" />
+        <x-text-input id="sku" name="sku" type="text" class="mt-1 block w-full" value="{{ old('sku', $p->sku) }}" />
         <x-input-error :messages="$errors->get('sku')" class="mt-2" />
     </div>
 

@@ -15,7 +15,7 @@
                     const term = this.search.toLowerCase();
                     return this.products.filter(p =>
                         p.name.toLowerCase().includes(term) ||
-                        p.sku.toLowerCase().includes(term) ||
+                        (p.sku && p.sku.toLowerCase().includes(term)) ||
                         (p.barcode && p.barcode.toLowerCase().includes(term))
                     ).slice(0, 24);
                 },
@@ -62,7 +62,7 @@
                     <button type="button" @click="addProduct(product)"
                             class="text-left border border-border rounded-lg p-3 hover:border-accent-500 hover:bg-surface-hover">
                         <div class="font-medium text-ink text-sm" x-text="product.name"></div>
-                        <div class="text-xs text-ink-muted" x-text="product.sku"></div>
+                        <div class="text-xs text-ink-muted" x-text="product.sku || ''"></div>
                     </button>
                 </template>
             </div>

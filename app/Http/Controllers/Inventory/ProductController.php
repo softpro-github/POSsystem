@@ -121,7 +121,7 @@ class ProductController extends Controller
             'unit_id' => ['required', 'exists:units,id'],
             'tax_group_id' => ['nullable', 'exists:tax_groups,id'],
             'name' => ['required', 'string', 'max:255'],
-            'sku' => ['required', 'string', 'max:100', 'unique:products,sku'.($product ? ",{$product->id}" : '')],
+            'sku' => ['nullable', 'string', 'max:100', 'unique:products,sku'.($product ? ",{$product->id}" : '')],
             'barcode' => ['nullable', 'string', 'max:100', 'unique:products,barcode'.($product ? ",{$product->id}" : '')],
             'description' => ['nullable', 'string'],
             'image' => ['nullable', 'image', 'max:4096'],
@@ -134,6 +134,7 @@ class ProductController extends Controller
 
         $validated['track_serial'] = $request->boolean('track_serial');
         $validated['is_active'] = $request->boolean('is_active', true);
+        $validated['sku'] = ($validated['sku'] ?? '') !== '' ? $validated['sku'] : null;
 
         return $validated;
     }

@@ -1,8 +1,8 @@
 <x-app-layout>
     <x-slot name="header">
-        <div class="flex justify-between items-center">
+        <div class="flex flex-wrap items-center justify-between gap-y-2">
             <h2 class="font-semibold text-xl text-ink leading-tight">Point of Sale</h2>
-            <div class="flex items-center gap-4">
+            <div class="flex flex-wrap items-center gap-4">
                 <a href="{{ route('pos.held') }}" class="text-sm text-accent-400 hover:text-accent-300 hover:underline">Held Orders ({{ $heldCount }})</a>
             </div>
         </div>
@@ -84,9 +84,28 @@
                 scanBarcode() {
                     const term = this.barcodeInput.trim().toLowerCase();
                     if (!term) return;
-                    const match = this.products.find(p => (p.barcode && p.barcode.toLowerCase() === term) || p.sku.toLowerCase() === term);
+
+                    let match = this.products.find(p => (p.barcode && p.barcode.toLowerCase() === term) || (p.sku && p.sku.toLowerCase() === term));
+                    let matchedSerialId = null;
+
+                    if (!match) {
+                        // Not a product-level barcode/SKU — check whether it's the IMEI/serial
+                        // of an individual unit (e.g. scanned off the phone itself/its box).
+                        outer:
+                        for (const p of this.products) {
+                            if (!p.track_serial) continue;
+                            for (const s of p.serials) {
+                                if (s.imei_serial && s.imei_serial.toLowerCase() === term) {
+                                    match = p;
+                                    matchedSerialId = s.id;
+                                    break outer;
+                                }
+                            }
+                        }
+                    }
+
                     if (match) {
-                        this.addProduct(match);
+                        this.addProduct(match, matchedSerialId);
                     } else {
                         this.error = `No product found for "${this.barcodeInput}".`;
                     }
@@ -133,7 +152,7 @@
                         const term = this.search.toLowerCase();
                         list = list.filter(p =>
                             p.name.toLowerCase().includes(term) ||
-                            p.sku.toLowerCase().includes(term) ||
+                            (p.sku && p.sku.toLowerCase().includes(term)) ||
                             (p.barcode && p.barcode.toLowerCase().includes(term))
                         );
                     }
@@ -145,10 +164,19 @@
                     return this.cart.filter(i => i.track_serial).map(i => i.product_serial_id);
                 },
 
-                addProduct(product) {
+                addProduct(product, preferredSerialId = null) {
                     this.error = '';
                     if (product.track_serial) {
-                        const available = product.serials.find(s => !this.usedSerialIds.includes(s.id));
+                        let available;
+                        if (preferredSerialId) {
+                            available = product.serials.find(s => s.id === preferredSerialId && !this.usedSerialIds.includes(s.id));
+                            if (!available) {
+                                this.error = `That serial/IMEI for ${product.name} is already in this sale or no longer in stock.`;
+                                return;
+                            }
+                        } else {
+                            available = product.serials.find(s => !this.usedSerialIds.includes(s.id));
+                        }
                         if (!available) {
                             this.error = `No available serial/IMEI for ${product.name}.`;
                             return;
@@ -263,6 +291,19 @@
                 },
 
                 resetCart() {
+                    // Reflect the just-completed sale in the in-memory catalog — otherwise
+                    // sold-out items and just-sold serials/IMEIs keep showing as available
+                    // in this POS session until the page is reloaded.
+                    this.cart.forEach(item => {
+                        const product = this.products.find(p => p.id === item.product_id);
+                        if (!product) return;
+                        if (item.track_serial) {
+                            product.serials = product.serials.filter(s => s.id !== item.product_serial_id);
+                        } else {
+                            product.quantity = Math.max(0, product.quantity - item.quantity);
+                        }
+                    });
+
                     this.cart = [];
                     this.discountAmount = 0;
                     this.customerId = '';
@@ -472,7 +513,7 @@
                             </div>
                             <div class="min-w-0 flex-1">
                                 <div class="text-sm text-ink truncate" x-text="product.name"></div>
-                                <div class="text-xs text-ink-subtle" x-text="product.sku + ' · ' + product.quantity + ' ' + (product.unit || 'pc') + ' in stock'"></div>
+                                <div class="text-xs text-ink-subtle" x-text="(product.sku ? product.sku + ' · ' : '') + product.quantity + ' ' + (product.unit || 'pc') + ' in stock'"></div>
                             </div>
                             <div class="text-sm font-semibold text-ink shrink-0" x-text="'₦' + money(product.selling_price)"></div>
                         </button>
@@ -510,7 +551,7 @@
                         <template x-if="item.track_serial">
                             <select x-model.number="item.product_serial_id" class="w-full text-xs bg-surface-hover border-border-strong text-ink rounded mt-1">
                                 <template x-for="s in item.serials" :key="s.id">
-                                    <option :value="s.id" x-text="s.imei_serial"></option>
+                                    <option :value="s.id" :selected="s.id === item.product_serial_id" x-text="s.imei_serial"></option>
                                 </template>
                             </select>
                         </template>

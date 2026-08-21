@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <div class="flex justify-between items-center">
+        <div class="flex flex-wrap items-center justify-between gap-y-2">
             <h2 class="font-semibold text-xl text-ink leading-tight">Purchase Order #{{ $purchaseOrder->id }}</h2>
             @can('manage purchase returns')
                 @if ($purchaseOrder->status === 'received')

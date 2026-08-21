@@ -8,7 +8,7 @@
             <x-flash-messages />
 
             <form method="GET" class="flex flex-wrap items-center gap-3 bg-surface-raised border border-border rounded-lg p-4">
-                <input type="text" name="search" value="{{ request('search') }}" placeholder="Invoice number" class="bg-surface-hover border-border-strong text-ink rounded-md shadow-sm text-sm">
+                <input type="text" name="search" value="{{ request('search') }}" placeholder="Invoice number or IMEI/Serial" class="bg-surface-hover border-border-strong text-ink rounded-md shadow-sm text-sm">
                 <input type="date" name="from" value="{{ request('from') }}" class="bg-surface-hover border-border-strong text-ink rounded-md shadow-sm text-sm">
                 <input type="date" name="to" value="{{ request('to') }}" class="bg-surface-hover border-border-strong text-ink rounded-md shadow-sm text-sm">
                 <button type="submit" class="px-4 py-2 bg-surface-hover text-ink-muted rounded-md text-sm hover:bg-zinc-700">Filter</button>

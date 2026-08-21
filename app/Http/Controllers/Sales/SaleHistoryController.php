@@ -17,7 +17,11 @@ class SaleHistoryController extends Controller
     {
         $sales = Sale::with(['customer', 'user'])
             ->when($request->filled('search'), function ($query) use ($request) {
-                $query->where('invoice_number', 'like', '%'.$request->string('search').'%');
+                $term = $request->string('search');
+                $query->where(function ($q) use ($term) {
+                    $q->where('invoice_number', 'like', "%{$term}%")
+                        ->orWhereHas('items.productSerial', fn ($q) => $q->where('imei_serial', 'like', "%{$term}%"));
+                });
             })
             ->when($request->filled('from'), fn ($q) => $q->whereDate('sold_at', '>=', $request->date('from')))
             ->when($request->filled('to'), fn ($q) => $q->whereDate('sold_at', '<=', $request->date('to')))

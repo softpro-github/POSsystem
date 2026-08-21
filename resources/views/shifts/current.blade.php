@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <div class="flex justify-between items-center">
+        <div class="flex flex-wrap items-center justify-between gap-y-2">
             <h2 class="font-semibold text-xl text-ink leading-tight">Current Shift</h2>
             <a href="{{ route('pos.index') }}" class="text-sm text-accent-400 hover:text-accent-300 hover:underline">Back to POS</a>
         </div>

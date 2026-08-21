@@ -1,8 +1,8 @@
 <x-app-layout>
     <x-slot name="header">
-        <div class="flex justify-between items-center">
+        <div class="flex flex-wrap items-center justify-between gap-y-2">
             <h2 class="font-semibold text-xl text-ink leading-tight">Products</h2>
-            <div class="flex gap-3">
+            <div class="flex flex-wrap gap-3">
                 <a href="{{ route('categories.index') }}" class="inline-flex items-center px-4 py-2 bg-surface-hover border border-border-strong text-ink-muted rounded-md text-sm hover:bg-surface-hover">Categories</a>
                 <a href="{{ route('labels.create') }}" class="inline-flex items-center px-4 py-2 bg-surface-hover border border-border-strong text-ink-muted rounded-md text-sm hover:bg-surface-hover">Print Labels</a>
                 <a href="{{ route('products.create') }}" class="inline-flex items-center px-4 py-2 bg-accent-500 text-zinc-950 rounded-md text-sm hover:bg-accent-400">Add Product</a>
